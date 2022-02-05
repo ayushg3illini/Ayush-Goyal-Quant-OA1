@@ -18,7 +18,7 @@ Then, in your new repository, please run the following command:
 
 git remote add release https://github.com/uiuc-quant/assessments/tree/main
 git fetch release
-git merge release/[project-name]
+
 
 Read through the ReadMe included in the inner folder and do all your work there. Message us if you have any questions on design choices and such. Good luck!
 
