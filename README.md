@@ -33,6 +33,5 @@ Ayush Goyal - ayushg3@illinois.du
 - https://www.computerhope.com/jargon/r/regex.htm
 - https://docs.python.org/3/library/re.html
 - https://docs.python.org/3/library/json.html
-- https://realpython.com/python-send-email/
-- https://docs.python.org/3/library/unittest.html
-- https://realpython.com/python-testing/
+- https://docs.python.org/3/library/csv.html
+- https://docs.trifacta.com/display/DP/Supported+Special+Regular+Expression+Characters
