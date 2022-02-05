@@ -15,7 +15,7 @@ The project consists of a script that allows you to fill email templates by repl
 
 1) Installed Python 3.7.0 or above 
 2) Installed VS Code (optional)
-3) Make sure there exists a 'user_data.csv', 'email_template.txt', and 'email_info.csv' files in the same directory as the given python script.
+3) Make sure there exists a 'user_data.csv', 'email_template.txt', and 'email_info.csv' files in the same directory as the given python script. By default, you are provided with some sample data in the previously mentioned files to test the script locally. 
 
 # Usage
 ## Instructions to run the script 
