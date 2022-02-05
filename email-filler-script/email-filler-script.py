@@ -14,9 +14,7 @@ class EmailFiller :
         """ Reads the user email data from the 'filename' csv file"""
         with open(filename, newline='') as dataInputFile:
             self.userData = list( csv.DictReader(dataInputFile) )
-
         self.noOfColumns = len(self.userData[0])
-
         for i in range(self.noOfColumns):
             ithColumnName = list(self.userData[0].keys())[0] 
             self.userData[0][ithColumnName.lower()] = self.userData[0].pop(ithColumnName)
@@ -66,9 +64,9 @@ class EmailFiller :
             if searchResult.group(1) != pattern.group(1) or searchResult.group(2) != pattern.group(2) :
                 self.errorFlag = 1
         if self.errorFlag == 1 :
-                print("There are errors in the drafted Email")
+            print("There are errors in the drafted Email")
         else:
-                print("The drafted email is error free")
+            print("The drafted email is error free")
 
     def writeJsonFile(self) :
         """ Writes the collaborated details regarding the user email onto a json file"""
@@ -78,15 +76,18 @@ class EmailFiller :
         print("JSON File Updated")
         textInputFile.close()
 
+def main() :
+    fillUserEmail = EmailFiller()
+    fillUserEmail.readEmailInfo('email_info.csv')
+    fillUserEmail.readEmailSubjectAndBody('email_template.txt')
+    fillUserEmail.readUserData('user_data.csv')
+    pattern = fillUserEmail.userInputPattern()
+    fillUserEmail.fillTemplate(pattern)
+    fillUserEmail.errorDetection(pattern)
+    fillUserEmail.writeJsonFile()
 
-fillUserEmail = EmailFiller()
-fillUserEmail.readEmailInfo('email_info.csv')
-fillUserEmail.readEmailSubjectAndBody('email_template.txt')
-fillUserEmail.readUserData('user_data.csv')
-pattern = fillUserEmail.userInputPattern()
-fillUserEmail.fillTemplate(pattern)
-fillUserEmail.errorDetection(pattern)
-fillUserEmail.writeJsonFile()
+if __name__ == '__main__' :
+    main()
 
 
 
